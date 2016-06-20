@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DWV-z1-vSY">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uyh-2s-KyY">
+                                <rect key="frame" x="106" y="117" width="163" height="36"/>
+                                <state key="normal" title="AFURLSessionManager"/>
+                                <connections>
+                                    <segue destination="123-I4-Q7j" kind="show" id="rWr-4z-z3W"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLu-XV-5M6">
+                                <rect key="frame" x="106" y="194" width="163" height="36"/>
+                                <state key="normal" title="AFHttpSessionManager"/>
+                                <connections>
+                                    <segue destination="uR3-Wu-aVI" kind="show" id="tx9-Wq-SEu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ftd-2u-5Ib"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-106.5" y="-166.5"/>
+        </scene>
+        <!--URL SessionVC-->
+        <scene sceneID="6LR-Pa-R9m">
+            <objects>
+                <viewController id="123-I4-Q7j" customClass="AFURLSessionVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1sK-2o-3ue"/>
+                        <viewControllerLayoutGuide type="bottom" id="gfJ-zO-N6w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hyf-N2-OXt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CI2-kr-HQS">
+                                <rect key="frame" x="47" y="182" width="300" height="38"/>
+                                <state key="normal" title="下载"/>
+                                <connections>
+                                    <action selector="touchDownAction:" destination="123-I4-Q7j" eventType="touchUpInside" id="uZi-nV-By0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBd-oP-Lv3">
+                                <rect key="frame" x="47" y="341" width="308" height="38"/>
+                                <state key="normal" title="上传"/>
+                                <connections>
+                                    <action selector="touchUpLoadAction:" destination="123-I4-Q7j" eventType="touchUpInside" id="GSa-dx-CJ6"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EjH-46-wPe">
+                                <rect key="frame" x="47" y="155" width="300" height="2"/>
+                            </progressView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pfC-Q2-VFD">
+                                <rect key="frame" x="47" y="287" width="300" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="downProgressView" destination="EjH-46-wPe" id="fT8-cq-NfC"/>
+                        <outlet property="upLoadProgressView" destination="pfC-Q2-VFD" id="kmI-ET-2w3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1qh-Fe-0la" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="892.5" y="-294.5"/>
+        </scene>
+        <!--SessionVC-->
+        <scene sceneID="ya2-WV-8Br">
+            <objects>
+                <viewController id="uR3-Wu-aVI" customClass="AFHTTPSessionVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Czn-Pw-lRU"/>
+                        <viewControllerLayoutGuide type="bottom" id="NhS-4a-qy8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yoq-Ks-bU4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ot6-fk-vst">
+                                <rect key="frame" x="114" y="227" width="162" height="43"/>
+                                <state key="normal" title="Post"/>
+                                <connections>
+                                    <action selector="postAction:" destination="uR3-Wu-aVI" eventType="touchUpInside" id="B3v-C9-ddi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1X8-fO-Ky5">
+                                <rect key="frame" x="124" y="312" width="162" height="43"/>
+                                <state key="normal" title="Mutipart Post"/>
+                                <connections>
+                                    <action selector="mutipartPostAction:" destination="uR3-Wu-aVI" eventType="touchUpInside" id="f6F-Zu-ebL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Py4-QE-QxO">
+                                <rect key="frame" x="114" y="142" width="162" height="43"/>
+                                <state key="normal" title="GET"/>
+                                <connections>
+                                    <action selector="getAction:" destination="uR3-Wu-aVI" eventType="touchUpInside" id="AhH-Cc-scn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H7d-Nh-dbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="459.5" y="-90.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dtM-Ir-DDT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DWV-z1-vSY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z6h-SF-QCV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="UgI-Ti-GSh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhs-GH-uoG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-606.5" y="159.5"/>
+        </scene>
+    </scenes>
+</document>
